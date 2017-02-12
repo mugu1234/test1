@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <!--设置开发模式-->
+  <constant name="struts.devMode" value="true"></constant>
+  <package name="p1" extends="struts-default">
+      <action name="test" class="com.seu.test.TestAction" method="sayhello">
+          <result name="success">/success.jsp</result>
+      </action>
+
+      <!--<action name="test2" class="com.seu.test.Demo3">-->
+          <!--<result name="success">/success.jsp</result>-->
+      <!--</action>-->
+      <!--<action name="addUser" class="com.seu.test.User" method="addUser">-->
+          <!--<result name="success">/addUser.jsp</result>-->
+      <!--</action>-->
+      <!--<action name="updateUser" class="com.seu.test.User" method="updataeUser">-->
+          <!--<result name="success">/updateUser.jsp</result>-->
+      <!--</action>-->
+      <!--<action name="removeUser" class="com.seu.test.User" method="removeUser">-->
+          <!--<result name="success">/removeUser.jsp</result>-->
+      <!--</action>-->
+      <action name="*" class="com.seu.test.User" method="{1}">
+          <result name="success">/{1}.jsp</result>
+      </action>
+  </package>
+
+</struts>
